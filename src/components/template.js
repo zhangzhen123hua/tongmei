@@ -1,6 +1,6 @@
 import imgMarker from './img'
 
-export const getOption = ( centerData=[113.22144, 39.99597] ,series = []) => {
+export const getOption = ( centerData=[113.20312578, 40.04471515] ,series = []) => {
   return {
     geo: {
       id: undefined, // 组件 ID。默认不指定。指定则可用于在 option 或者 API 中引用组件

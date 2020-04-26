@@ -22,8 +22,8 @@ export default {
         title: {
           text: '子公司隐患风险统计',
           textStyle:{
-            color:'rgb(69, 161, 255)',
-            fontSize:12
+            color:'#97B6FF',
+            fontSize:14
           }
         },
         color: ['#fff'],

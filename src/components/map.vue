@@ -16,14 +16,17 @@ export default {
       option: null,
       series: [],
       chart: null,
-      recData:null
+      recData:null,
+      mapId:null
+
 
     }
   },
   created(){
+    // 接受坐标
     Bus.$on('evn',(data)=>{
-      // console.log(data)
-      this.recData=data
+      this.recData=data.site
+      this.mapId=data.id
       this.goInit()
     })
   },
@@ -90,7 +93,7 @@ export default {
 
     setLegend([130, 53])
 
-    const markerData = getGeoCoordList().filter(item => {
+    const markerData = getGeoCoordList(this.mapId).filter(item => {
       return state[item.name] === undefined || state[item.name] === 0
     })
 

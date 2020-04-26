@@ -26,18 +26,18 @@ export default {
          title: {
           text: '隐患风险等级统计',
           textStyle:{
-            color:'rgb(69, 161, 255)',
-            fontSize:12
+            color:'#97B6FF',
+            fontSize:14
           }
         },
-        color: ['#1873FF', '#7739FF', '#FF6041', '#FFB442'],
+        color: ['#EF4D68', '#C91313', 'FFCB00', '#FFCB00','#FF9200','#EF4D68','#FF9200','C91313'],
         legend: {
-          orient: 'vertical',
+          orient: 'vertical', 
           x: 'right',
-          right: 0,
-          top: 40,
+          left:200,
+          top: 50,
           icon: 'circle',
-          itemGap: 32,
+          itemGap: 20,
           textStyle: {
             fontSize: 16,
             color: '#97B6FF'
@@ -45,20 +45,20 @@ export default {
           data: params.map(({ name }) => name),
           formatter: (name) => {
             let value = valueMap.get(name)
-            return `${name} 占比${parseInt(value / sum * 100)}%`
+            return `${name}  ${parseInt(value / sum * 100)}%`
           }
         },
         series: [
           {
             type: 'pie',
-            center: ['28%', '50%'],
-            radius: ['50%', '70%'],
+            center: ['20%', '60%'],
+            radius: ['60%', '80%'],
             avoidLabelOverlap: false,
             label: {
               normal: {
                 show: true,
-                position: 'center',
                 formatter: `${sum}`,
+                position: 'center',
                 color: '#97B6FF',
                 fontSize: 15
               }

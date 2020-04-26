@@ -1,3 +1,26 @@
+// export const mapInfo = [
+//   {
+//     id:0,
+//     value: {
+//       程家沟矿: [112.31271, 37.08638] ,
+//       石湖矿: [110.035755, 40.360695] ,
+//       焦家寨矿: [111.402964, 38.873135] ,
+//       轩岗煤电公司: [112.43023, 38.89896],
+//     }
+//   },
+//   {
+//     id: 1,
+//     value: {
+//       程家沟矿: [112.31271, 37.08638] ,
+//       石湖矿: [110.035755, 40.360695] ,
+//       焦家寨矿: [111.402964, 38.873135] ,
+//       轩岗煤电公司: [112.43023, 38.89896],
+//     }
+//   }
+// ]
+
+  
+
 export const geoCoordMap = {
   程家沟矿: [112.31271, 37.08638],
   石湖矿: [110.035755, 40.360695],
@@ -50,15 +73,33 @@ export const geoCoordMap = {
   焦煤矿:[112.018426, 39.847958]
 }
 
-export const getGeoCoordList = () => {
+export const getGeoCoordList = (val = 0) => {
+  console.log(val, 222)
+  
   const res = []
   for (const key in geoCoordMap) {
     res.push({ name: key, value: geoCoordMap[key] })
   }
   return res
+
+  // const fit = mapInfo.filter((item) => {
+  //   return item.id = val
+  // })
+  // console.log(fit)
+  // const fat =fit[0].value
+  // const res = []
+  // for (const key in fat) {
+  //   res.push({ name: key, value: fat[key] })
+  // }
+  // return res
+
+
 }
+
+
 export const lines = [
   //轩岗煤电公司
+  
   [geoCoordMap['程家沟矿'], geoCoordMap['轩岗煤电公司']],
   [geoCoordMap['石湖矿'], geoCoordMap['轩岗煤电公司']],
   [geoCoordMap['焦家寨矿'], geoCoordMap['轩岗煤电公司']],
