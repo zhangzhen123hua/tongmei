@@ -58,23 +58,23 @@ export default {
   render () {
     //   下面的数组决定了结构 start 和 end 是起始和结束的颜色 0-2 分别代表 RGB
     const list = [
-      {
+       {
         title: '电机轴温报警',
-        start: [139, 0, 139],
-        end: [255, 255, 112],
+        start: [239,77,104],
+        end: [152,96,228],
         value: 100
       },
       {
         title: '电机轴温报警',
-        start: [139, 0, 139],
-        end: [255, 255, 112],
-        value: 30
+        start: [255,203,0],
+        end: [255,145,0],
+        value: 70
       },
       {
         title: '电机轴温报警',
-        start: [139, 0, 139],
-        end: [255, 255, 112],
-        value: 30
+        start: [69,161,255],
+        end: [66,108,255],
+        value: 50
       }
     ]
     const { width } = this.position
@@ -115,8 +115,9 @@ export default {
     .item {
         padding: 10px;
         .title {
-            font-size: 12px;
-            padding-bottom: 4px;
+            font-size: 14px;
+            color: #97B6FF;
+            padding-bottom: 12px;
         }
         .progress {
             overflow: hidden;
@@ -125,13 +126,14 @@ export default {
         }
         .line {
             width: 6px;
-            height: 10px;
+            height: 22px;
             float: left;
             margin-right: 6px;
         }
         .value {
             padding-left: 10px;
-            font-size: 14px;
+            color: #97B6FF;
+            font-size: 16px;
         }
     }
 }

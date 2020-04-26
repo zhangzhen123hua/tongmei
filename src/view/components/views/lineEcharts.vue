@@ -43,8 +43,12 @@ export default {
           {
             type: 'category',
             data: ['本部', '地煤', '索梅', '轩煤', '宏大'],
-            axisTick: {
-              alignWithLabel: true
+            axisTick: {//去x轴刻度线
+              show:false,
+            },
+             axisLine: { //去x轴刻度线
+              show: false,
+              alignWithLabel: false
             },
             axisLabel: {
               interval: 0,
@@ -57,7 +61,14 @@ export default {
         ],
         yAxis: [{
           type: 'value',
+          axisTick:{ //去掉刻度线
+            show: false,
+          },
+          axisLine:{ //去y轴刻度线
+            show:false,
+          },
           axisLabel: {
+            show:false,
             textStyle: {
               color: '#97B6FF'
             }
@@ -73,16 +84,16 @@ export default {
           {
             name: '直接访问',
             type: 'bar',
-            barWidth: 24,
+            barWidth: 20,
             data: [8, 5, 4, 5, 4],
             itemStyle: {
               normal: {
                 color: new echarts.graphic.LinearGradient(
                   0, 0, 0, 1,
                   [
-                    { offset: 0, color: '#83bff6' },
-                    { offset: 0.5, color: '#188df0' },
-                    { offset: 1, color: '#188df0' }
+                    { offset: 0, color: '#00BDF1'},
+                    { offset: 0.5, color: '#426CFF' },
+                    { offset: 1, color: '#426CFF' }
                   ]
                 )
               }

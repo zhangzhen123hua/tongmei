@@ -30,7 +30,7 @@ export default {
             fontSize:14
           }
         },
-        color: ['#EF4D68', '#C91313', 'FFCB00', '#FFCB00','#FF9200','#EF4D68','#FF9200','C91313'],
+        color: ['#FFCB00', '#FF9200 ', '#EF4D68', '#C91313'],
         legend: {
           orient: 'vertical', 
           x: 'right',
@@ -52,7 +52,7 @@ export default {
           {
             type: 'pie',
             center: ['20%', '60%'],
-            radius: ['60%', '80%'],
+            radius: ['70%', '80%'],
             avoidLabelOverlap: false,
             label: {
               normal: {
