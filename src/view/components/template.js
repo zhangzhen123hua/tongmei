@@ -1,17 +1,17 @@
 import imgMarker from './img'
 
-export const getOption = ( centerData=[113.20312578, 40.04471515] ,series = []) => {
+export const getOption = (centerData = [113.20312578, 40.04471515], series = [], zoom = 1) => {
   return {
     geo: {
       id: undefined, // 组件 ID。默认不指定。指定则可用于在 option 或者 API 中引用组件
       show: true, // 是否显示地理坐标系组件
       map: 'map', // 地图类型
       roam: true, // 是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移，可以设置成 'scale' 或者 'move'。设置成 true 为都开启
-      center:centerData , // 当前视角的中心点，用经纬度表示
+      center: centerData, // 当前视角的中心点，用经纬度表示
       aspectScale: undefined, // 这个参数用于 scale 地图的长宽比
       boundingCoords: undefined, // 二维数组，定义定位的左上角以及右下角分别所对应的经纬度
-      zoom: 100, // 当前视角的缩放比例
-      scaleLimit: { min: 0.3, max: 2 }, // 滚轮缩放的极限控制
+      zoom, // 当前视角的缩放比例
+      scaleLimit: { min: 0.3, max: 5 }, // 滚轮缩放的极限控制
       nameMap: undefined, // 自定义地区的名称映射
       label: { // 图形上的文本标签，可用于说明图形的一些数据信息，比如值，名称等
         show: false
@@ -96,7 +96,7 @@ export const getMarker = (data, color = '#87DAED') => {
     coordinateSystem: 'geo', // 使用的坐标系
     symbol: 'image://' + imgMarker, // 标记的图形
     symbolSize: 30, // 标记的大小，可以设置成诸如 10 这样单一的数字，也可以用数组分开表示宽和高
-    symbolOffset: ['1', '-8'], // 标记相对于原本位置的偏移
+    symbolOffset: ['0', '0'], // 标记相对于原本位置的偏移
     label: {
       show: true,
       color: color,
@@ -122,7 +122,7 @@ export const getEffectScatter = (data, color = 'rgba(241, 109, 115, .8)') => {
     type: 'effectScatter',
     coordinateSystem: 'geo',
     showEffectOn: 'render',
-    symbolSize: 9,
+    symbolSize: 5,
     label: {
       show: true,
       color: color,

@@ -70,34 +70,35 @@
 </template>
 
 <script>
-import Map from '../components/map'
-import Bus from '../components/bus'
-import systemOne from '../components/views/systemOne'
-import systemTwo from '../components/views/systemTwo'
-import timeAlarm from '../components/views/timeAlarm'
-import hiddenTrouble from '../components/views/hiddenTrouble'
-import historicalAlarm from '../components/views/historicalAlarm'
-import middle from '../components/views/middle'
-import IntelligentRate from '../components/views/IntelligentRate'
-import image0 from '@/assets/img/本部.png'
-import image1 from '@/assets/img/朔煤.png'
-import image2 from '@/assets/img/本部.png'
-import image3 from '@/assets/img/轩煤.png'
-import image4 from '@/assets/img/宏大.png'
+import Map from './components/map'
+import Bus from './components/bus'
+import systemOne from './components/views/systemOne'
+import systemTwo from './components/views/systemTwo'
+import timeAlarm from './components/views/timeAlarm'
+import hiddenTrouble from './components/views/hiddenTrouble'
+import historicalAlarm from './components/views/historicalAlarm'
+import middle from './components/views/middle'
+import IntelligentRate from './components/views/IntelligentRate'
+import image0 from './assets/img/本部.png'
+import image1 from './assets/img/朔煤.png'
+import image2 from './assets/img/本部.png'
+import image3 from './assets/img/轩煤.png'
+import image4 from './assets/img/宏大.png'
+import './assets/css/style.css'
 
 export default {
-  data(){
-    return{
-      listBtn:[
-        {id:0,name:'本部',position:{id:0, site:[113.20312578, 40.04471515]}, url:image0},
-        {id:1,name:'地煤',position:{id:1, site:[113.22144, 39.99597]}, url:image1},
-        {id:2,name:'朔煤',position:{id:2, site:[112.92835, 39.77024]}, url:image2},
-        {id:3,name:'轩煤',position:{id:3, site:[112.43023, 38.89896]}, url:image3},
-        {id:4,name:'宏大',position:{id:4, site:[111.5416293, 36.1336759]}, url:image4}
-      ],
+  data () {
+    return {
+      listBtn: [
+        { id: 0, name: '本部', position: { id: 0, site: [113.20312578, 40.04471515] }, url: image0 },
+        { id: 1, name: '地煤', position: { id: 1, site: [113.22144, 39.99597] }, url: image1 },
+        { id: 2, name: '朔煤', position: { id: 2, site: [112.92835, 39.77024] }, url: image2 },
+        { id: 3, name: '轩煤', position: { id: 3, site: [112.43023, 38.89896] }, url: image3 },
+        { id: 4, name: '宏大', position: { id: 4, site: [111.5416293, 36.1336759] }, url: image4 }
+      ]
     }
   },
-  components:{
+  components: {
     Map,
     systemOne,
     systemTwo,
@@ -107,9 +108,9 @@ export default {
     middle,
     IntelligentRate
   },
-  methods:{
-    goChange(val){
-      Bus.$emit('evn',val)
+  methods: {
+    goChange (val) {
+      Bus.$emit('evn', val)
     }
   }
 
@@ -121,7 +122,7 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url('../assets/img/背景1.png');
+  background-image: url('./assets/img/背景1.png');
 }
 //需要隐藏头部
 .main-header {
@@ -214,6 +215,7 @@ export default {
               font-size: 16px;
               color: #97B6FF;
               text-align: center;
+              cursor: pointer;
               img{
                 width: 28px;
               }
