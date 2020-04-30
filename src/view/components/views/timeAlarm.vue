@@ -34,9 +34,11 @@ export default {
   display: flex;
   flex-direction: column;
   .samll-title{
-    padding: 15px 0 10px 25px;
+    padding-left: 5%;
     font-size: 20px;
     color: #45A1FF;
+    height:16%;
+    line-height: 4vh;
   }
   .view{
     flex: 1;
@@ -47,17 +49,20 @@ export default {
       li{
         flex: 1;
         height: 20%;
-        line-height: 46px;
+        line-height: 5vh;
         font-size: 14px;
+        padding-left: 8%;
         color: #97B6FF;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
         i{
           display: inline-block;
           width: 8px;
           height: 8px;
           background-color: red;
           border-radius: 50%;
-          margin-right: 20px;
-          margin-left: 35px;
+          margin-right: 5%;
           box-shadow: 0px 0px 30px 4px rgb(255, 0, 0);
         }
       }

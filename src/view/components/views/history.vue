@@ -62,7 +62,7 @@ export default {
         title: '电机轴温报警',
         start: [239,77,104],
         end: [152,96,228],
-        value: 100
+        value: 96
       },
       {
         title: '电机轴温报警',
@@ -111,9 +111,9 @@ export default {
 
 <style lang="scss" scoped>
 .history {
-    height: 220px;
+    height: 100%;
     .item {
-        padding: 10px;
+       height: 33.3%;
         .title {
             font-size: 14px;
             color: #97B6FF;

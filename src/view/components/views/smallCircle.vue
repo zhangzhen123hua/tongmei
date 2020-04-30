@@ -11,18 +11,26 @@ export default {
       res: null,
     };
   },
-  props:{
-    charsData:Object
+  props: {
+    charsData: Object,
   },
-  computed:{
-    prodata(){
-      return this.charsData
-    }
+  computed: {
+    prodata() {
+      return this.charsData;
+    },
   },
   methods: {
+    forceUpdate () {
+      debugger
+      this.drawLine(this.prodata)
+    },
     drawLine(params) {
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(this.$refs.recs);
+      let sizeFun = function() {
+        myChart.resize();
+      };
+      window.addEventListener("resize", sizeFun);
       //配置项
       let option = {
         legend: {
@@ -42,7 +50,7 @@ export default {
               fontSize: "12",
               lineHeight: 20,
               formatter: "{d}% \n {a}",
-              color:"#C2D4FF"
+              color: "#C2D4FF",
             },
             emphasis: {
               label: {

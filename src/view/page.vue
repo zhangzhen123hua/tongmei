@@ -167,7 +167,7 @@ export default {
         height: 100%;
         background: rgba(11,63,161,0.30);
         border: 2px solid rgba(113,135,205,0.20);
-        box-shadow: 0 5px 6px 0 rgba(0,0,0,0.30), inset 0 0 14px 0 #215EDA;
+        box-shadow: 0 5px 6px 0 rgba(0,0,0,0.30), inset 0 0 6px 0 #215EDA;
       }
     }
   }
@@ -191,7 +191,7 @@ export default {
       .bot-border{
         background: rgba(11,63,161,0.30);
         border: 2px solid rgba(113,135,205,0.20);
-        box-shadow: 0 5px 6px 0 rgba(0,0,0,0.30), inset 0 0 14px 0 #215EDA;
+        box-shadow: 0 5px 6px 0 rgba(0,0,0,0.30), inset 0 0 6px 0 #215EDA;
       }
     }
     // 子上

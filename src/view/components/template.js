@@ -1,6 +1,6 @@
 import imgMarker from './img'
 
-export const getOption = (centerData = [113.20312578, 40.04471515], series = [], zoom = 1) => {
+export const getOption = (centerData = [113.20312578, 40.04471515], series = [], zoom=1 ) => {
   return {
     geo: {
       id: undefined, // 组件 ID。默认不指定。指定则可用于在 option 或者 API 中引用组件
@@ -44,7 +44,8 @@ export const getOption = (centerData = [113.20312578, 40.04471515], series = [],
       emphasis: { // 高亮状态下的多边形和标签样式
         label: {
           show: true,
-          color: '#FFFFFF'
+          color: '#ccc'
+          
         },
         itemStyle: {
           areaColor: '#389BB7',
@@ -105,21 +106,24 @@ export const getMarker = (data, color = '#87DAED') => {
       formatter: function (params) { // 圆环显示文字
         return params.data.name
       },
-      fontSize: 13
+      fontSize: 12
     },
     emphasis: {
       label: {
-        show: true
+        show: true,
+        fontSize: 20
       }
     },
     data: data, // 系列中的数据内容数组
-    zlevel: 3 // 所有图形的 zlevel 值
+    zlevel: 3,// 所有图形的 zlevel 值
+    hoverAnimation: false,
   }
 }
 
-export const getEffectScatter = (data, color = 'rgba(241, 109, 115, .8)') => {
+export const getEffectScatter = (data, color ) => {
   return {
     type: 'effectScatter',
+    // legendHoverLink :true,
     coordinateSystem: 'geo',
     showEffectOn: 'render',
     symbolSize: 5,
@@ -135,7 +139,7 @@ export const getEffectScatter = (data, color = 'rgba(241, 109, 115, .8)') => {
     },
     rippleEffect: {
       period: 15,
-      scale: 6,
+      scale: 6,// 动画中波纹的最大缩放比例。
       brushType: 'fill'
     },
     hoverAnimation: true,

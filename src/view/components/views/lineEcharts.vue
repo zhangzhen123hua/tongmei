@@ -103,6 +103,11 @@ export default {
       }
       this.chart === null || this.chart.dispose()
       this.chart = echarts.init(this.$refs.chart)
+      let myChart=echarts.init(this.$refs.chart)
+      let sizeFun = function() {
+        myChart.resize();
+      };
+      window.addEventListener("resize", sizeFun);
       this.chart.setOption(this.option)
     }
   }

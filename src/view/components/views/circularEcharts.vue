@@ -22,6 +22,10 @@ export default {
       }
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(this.$refs.doughtnut)
+      let sizeFun = function() {
+        myChart.resize();
+      };
+      window.addEventListener("resize", sizeFun);
       let option = {
          title: {
           text: '隐患风险等级统计',
@@ -34,8 +38,8 @@ export default {
         legend: {
           orient: 'vertical', 
           x: 'right',
-          left:200,
-          top: 50,
+          left:'60%',
+          top: '22%',
           icon: 'circle',
           itemGap: 20,
           textStyle: {
@@ -46,13 +50,14 @@ export default {
           formatter: (name) => {
             let value = valueMap.get(name)
             return `${name}  ${parseInt(value / sum * 100)}%`
-          }
+          },
+          
         },
         series: [
           {
             type: 'pie',
-            center: ['20%', '60%'],
-            radius: ['70%', '80%'],
+            center: ['20%', '50%'],
+            radius: ['55%', '50%'],
             avoidLabelOverlap: false,
             label: {
               normal: {
@@ -63,6 +68,7 @@ export default {
                 fontSize: 15
               }
             },
+            left:30,
             data: params
           }
         ]
@@ -89,7 +95,7 @@ export default {
   overflow: hidden;
   .doughtnut {
     width: 100%;
-    height: 200px;
+    height: 100%;
   }
 }
 </style>

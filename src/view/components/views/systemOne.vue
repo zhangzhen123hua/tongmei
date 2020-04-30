@@ -19,9 +19,11 @@ export default {
   display: flex;
   flex-direction: column;
   .samll-title{
-    padding: 15px 0 10px 25px;
+    padding-left: 5%;
     font-size: 20px;
     color: #45A1FF;
+    height:16%;
+    line-height: 4vh;
   }
   .view{
     flex: 1;

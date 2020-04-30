@@ -122,13 +122,14 @@ const map = {
     ]
   }
 }
-
 export const getMap = (id) => {
   return typeof id === 'number' && map[id] !== undefined ? map[id] : false
 }
+
 export const getGeoCoordList = (id) => {
   const _map = getMap(id)
   let res = {}
+  //初始化线全部数据
   if (_map === false) {
     for (const key in map) {
       const { include, name, color } = map[key]
@@ -139,7 +140,7 @@ export const getGeoCoordList = (id) => {
         color
       }
     }
-  } else {
+  } else { //公司线数据
     const { include, name, color } = _map
     res[name] = {
       data: include.map(name => {
@@ -155,13 +156,14 @@ export const getGeoCoordList = (id) => {
 export const getLines = id => {
   const _map = getMap(id)
   let res = []
+  //初始化时全部坐标数据
   if (_map === false) {
     for (const key in map) {
       const { include, name } = map[key]
-      const parent = geoCoordMap[name]
+      const parent = geoCoordMap[name]   //公司坐标
       res.push(...include.map(_name => [geoCoordMap[_name], parent]))
     }
-  } else {
+  } else {//公司坐标数据
     const { include, name } = _map
     const parent = geoCoordMap[name]
     res = include.map(_name => [geoCoordMap[_name], parent])

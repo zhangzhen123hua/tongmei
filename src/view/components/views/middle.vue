@@ -31,21 +31,23 @@ export default {
   display: flex;
   flex-direction: column;
   .samll-title{
-    padding: 15px 0 10px 25px;
+    padding-left: 3%;
     font-size: 20px;
     color: #45A1FF;
+    height:16%;
+    line-height: 4vh;
   }
   .view{
     flex: 1;
     display: flex;
-    // border: 1px solid red;
+    flex-direction: row;
     .item-left{
       flex: 1;
-      padding-left: 30px;
+       padding: 0 6%;
     }
     .item-right{
       flex: 1;
-      padding-left: 30px;
+      padding: 0 6%;
     }
    
   }
